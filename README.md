@@ -27,3 +27,59 @@ The Halite executable comes with a command line interface (CLI). Run `$ ./halite
   * Elixir: Upload a mix.exs. Your bot will compile with `mix deps.get` followed by `mix escript.build`.
   * Clojure: Upload a project.clj. Your bot will compile with `lein uberjar`.
   * .NET: Upload a MyBot.csproj or MyBot.fsproj. Your bot will compile with `dotnet restore` followed with `dotnet build`.
+
+
+# Notes
+
+## Notes:
+
+- fixed size of possible maps
+- symmetric maps
+- inspiration
+- collision
+- we have the positions of ships and dropoff
+- actions
+    - dock:
+        - build ship
+    - ship:
+        - move
+        - collect
+        - build
+- 400 to 500 turns
+- score = stored halite
+- losing conditions: no shir && not enough halite to create one.
+- analysis time provided; deterministic strategy possible for the first X turns
+- norsmalize positions
+
+## Questions
+
+- how to optimize halite?
+- harvest strategy
+- attack strategy?
+- dock strategy?
+- ship production strategy?
+- ship roles repartition?
+- avoiding friendly collisions
+- meta strategies
+    - example use the collision avoidance strategy of the enemy against him
+    - use collisions to create attractive spots as traps for enemy ships
+    - dynamically identify the opponent's strategy and counter it
+    - database of enemy username to counter their strategies
+    - create collisions with ennemy, create dock on resulting spot
+- end game strategy?
+    - all ships go to docks
+- deterministic x first turns strategy
+
+## Ideas
+
+- Try different bot strategies; switching bots should be easy.
+- genetic algorithms for tuning solutions
+- hardcoded behavior vs evolved behavior
+- statistical framework for bot comparisons
+- voting strategy?
+- timer-aware bot
+
+## Strategies to try
+
+- Create docks on the opponent's side?
+- Move ships by two to be ready to get the halite from collisions?
